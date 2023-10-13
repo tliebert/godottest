@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7kx7h2j6d1t"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_ibt13"]
+[ext_resource type="PackedScene" uid="uid://ddvf66wsyk6m7" path="res://scenes/block.tscn" id="2_qn0rj"]
+[ext_resource type="PackedScene" uid="uid://i2geer8l3wdx" path="res://scenes/Sleeper.tscn" id="3_wetoh"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_ibt13")
+
+[node name="ContainerObject" parent="." instance=ExtResource("2_qn0rj")]
+position = Vector2(803, 218)
+
+[node name="Sleeper" parent="." instance=ExtResource("3_wetoh")]
