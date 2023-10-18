@@ -7,12 +7,9 @@ const speed = 200
 func _ready():
 	$Sleeper.position = toilet_start
 	
-	
-	
 
 func _process(delta):
-	$Sleeper.position.x += 200 * delta
 #	print(Input.is_action_pressed("left"))
 
 func test_function():
-	print("thus is a test function")
+	pass
