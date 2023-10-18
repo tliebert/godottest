@@ -15,3 +15,11 @@ texture = ExtResource("1_pwec3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k8cha")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

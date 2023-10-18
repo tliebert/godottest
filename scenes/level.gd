@@ -1,15 +1,23 @@
 extends Node2D
 
 var test_array: Array[String] = ["Test", "Hello", "Stuff"]
-var toilet_start: Vector2 = Vector2(0, 200)
+var player_start_pos: Vector2 = Vector2(0, 200)
 const speed = 200
 
 func _ready():
-	$Sleeper.position = toilet_start
-	
+	$Player.position = player_start_pos
 
 func _process(delta):
-#	print(Input.is_action_pressed("left"))
+	pass
 
 func test_function():
 	pass
+
+
+func _on_player_laser_fired():
+	print("laser fired from Level")# Replace with function body.
+
+
+func _on_player_grenade_fired():
+	print("grenade fired, observed from level")
+	

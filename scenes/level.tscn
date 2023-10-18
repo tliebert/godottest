@@ -11,3 +11,6 @@ script = ExtResource("1_ibt13")
 position = Vector2(803, 218)
 
 [node name="Player" parent="." instance=ExtResource("3_qccfp")]
+
+[connection signal="grenade_fired" from="Player" to="." method="_on_player_grenade_fired"]
+[connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]
