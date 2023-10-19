@@ -3,8 +3,10 @@ extends CharacterBody2D
 var can_laser_fire = true
 var can_grenade_fire = true
 
-signal laser_fired(pos)
+signal laser_fired
 signal grenade_fired
+
+var laser = import()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,13 +17,10 @@ func _process(delta):
 	var resultant = Input.get_vector("left", "right", "up", "down")
 	
 	if(Input.is_action_just_pressed("primary action") && can_laser_fire):
-		#randomly select a marker 2D for the laser start
-		var laser_markers = $LaserStartPositions.get_children()
-		var selected_laser = laser_markers[randi() % laser_markers.size()]
+		print("fired laser")
 		can_laser_fire = false
 		$Timer.start()
-		laser_fired.emit(selected_laser.global_position)
-		
+		laser_fired.emit()
 		
 	if(Input.is_action_just_pressed("secondary action")  && can_grenade_fire):
 		print("fired grenade")

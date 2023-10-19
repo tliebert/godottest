@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7kx7h2j6d1t"]
+
+[ext_resource type="Script" path="res://graphics/objects/scenes/level.gd" id="1_b3lf5"]
+[ext_resource type="PackedScene" uid="uid://ddvf66wsyk6m7" path="res://graphics/objects/scenes/block.tscn" id="2_mf37h"]
+[ext_resource type="PackedScene" uid="uid://cky043hvrpp5k" path="res://graphics/objects/scenes/player.tscn" id="3_g2ogd"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_b3lf5")
+
+[node name="ContainerObject" parent="." instance=ExtResource("2_mf37h")]
+position = Vector2(803, 218)
+
+[node name="Player" parent="." instance=ExtResource("3_g2ogd")]
+
+[connection signal="grenade_fired" from="Player" to="." method="_on_player_grenade_fired"]
+[connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]
