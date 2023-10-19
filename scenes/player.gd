@@ -18,10 +18,10 @@ func _process(delta):
 		#randomly select a marker 2D for the laser start
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
-		can_laser_fire = false
-		$Timer.start()
 		laser_fired.emit(selected_laser.global_position)
 		
+		can_laser_fire = false
+		$Timer.start()
 		
 	if(Input.is_action_just_pressed("secondary action")  && can_grenade_fire):
 		print("fired grenade")

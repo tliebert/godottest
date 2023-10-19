@@ -17,8 +17,9 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_player_laser_fired(pos):
+	
 		var new_laser = laser_scene.instantiate()
+		add_child(new_laser)
 		new_laser.position = pos
 		
-		add_child(new_laser)
 	
